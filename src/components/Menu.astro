@@ -1,0 +1,42 @@
+---
+import cafeIcon from '../assets/icons/cafe.svg'
+import homeIcon from '../assets/icons/home.svg'
+import waveIcon from '../assets/icons/wave.svg'
+import locationIcon from '../assets/icons/location.svg'
+import avatar from '../assets/images/avatar.jpg'
+
+const pages = [
+  { label: 'Home', url: '/', icon: homeIcon },
+  { label: 'About', url: '/about', icon: waveIcon },
+  { label: 'Posts', url: '/posts', icon: cafeIcon },
+]
+---
+
+<div
+  class='h-screen bg-zinc-50 flex flex-col items-center w-1/6 border-r border-zinc-100 min-w-200'
+>
+  <div class='flex flex-col items-center pt-5 pb-2.5 px-4 w-full'>
+    <img
+      class='w-32 rounded-full hover:rotate-180 transition-all'
+      src={avatar}
+    />
+    <h1 class='mt-2 text-lg font-title text-center'>Clara Sim</h1>
+    <p class='text-sm font-title text-center'>Freelance illustrator</p>
+    <div class='flex gap-x-2 mt-2'>
+      <img class='w-5' src={locationIcon} />
+      <span class='text-sm text-zinc-700'>Sceaux, France</span>
+    </div>
+  </div>
+  <ul class='flex-col w-full mt-5'>
+    {
+      pages.map(({ label, url, icon }) => (
+        <li class='text-base leading-5 hover:bg-zinc-200 hover:cursor-pointer'>
+          <a class='py-1.5 px-5 flex gap-x-3 w-full' href={url}>
+            <img src={icon} />
+            <span>{label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
