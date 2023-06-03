@@ -1,9 +1,21 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro'
+import Layout from '@layouts/Layout.astro'
 
-const title = 'Landing!'
+const title = 'Clara S.'
 ---
 
-<BaseLayout pageTitle={title}>
-  I have no idea what I'm doing but Astro and Tailwind sure look fun!
-</BaseLayout>
+<Layout pageTitle={title}>
+  <p>Good evening Europe! Good morning Australia!</p>
+  <ul>
+    <li class='pl-1.5 list-disc list-inside'>
+      Learning Astro has been interesting so far!
+    </li>
+    <li class='pl-1.5 list-disc list-inside'>
+      Tailwind is giving me a headache: how do you make this responsive??
+    </li>
+  </ul>
+  <p class='mt-4 italic text-zinc-500'>
+    ((2023-me can't believe 2020-me wrote "freelance illustrator" in the bio of
+    her first static website so I'm keeping it))
+  </p>
+</Layout>
